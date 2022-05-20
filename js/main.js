@@ -2,6 +2,7 @@ const app = new Vue({
     el: '#root',
     data: {
         currentIndex: 0,
+        timer: 0,
         images: [{
                 src: 'img/01.jpg',
                 title: 'Svezia',
@@ -51,6 +52,18 @@ const app = new Vue({
                 this.currentIndex++;
             }
         },
+        changeImage(index) {
+            this.currentIndex = index;
+        },
+        play: function() {
+            let app = this;
+            this.timer = setInterval(function() {
+                app.nextImage();
+            }, 1000);
+        }
     },
+    created: function() {
+        this.play();
+    }
 
 })
