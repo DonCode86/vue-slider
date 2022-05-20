@@ -27,9 +27,30 @@ const app = new Vue({
                 title: 'Paradise',
                 text: 'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
             },
+        ],
 
-        ]
-    }
+    },
 
 
-});
+    methods: {
+        prevImage() {
+            //se ci troviamo in posizione zero con l'indice allora torniamo all'ultima posizione dell'indice
+            if (this.currentIndex === 0) {
+                this.currentIndex = this.images.length - 1;
+                //altrimenti vai semplicemente indietro di uno
+            } else {
+                this.currentIndex--;
+            }
+        },
+        nextImage() {
+            //se ci troviamo nell'ultima posizione dell'indice allora torniamo alla posizione zero dell'indice
+            if (this.currentIndex === this.images.length - 1) {
+                this.currentIndex = 0;
+                //altrimenti vai semplicemente avanti di uno
+            } else {
+                this.currentIndex++;
+            }
+        },
+    },
+
+})
