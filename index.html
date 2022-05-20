@@ -13,25 +13,25 @@
 <body>
     <div id="root">
 
-        <div class="container">
-            <div class="items">
+        <div class="container" @mouseover=>
+            <div class="items ">
 
-                <div class="item active">
-                    <img :src="images[currentIndex].src">
-                    <div class="text">
+                <div class="item active ">
+                    <img :src="images[currentIndex].src ">
+                    <div class="text ">
                         <h3>Lorem</h3>
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.</p>
                     </div>
                 </div>
 
             </div>
-            <div class="thumbs">
-                <div class="prev" @click="prevImage()"></div>
+            <div class="thumbs ">
+                <div class="prev " @click="prevImage() "></div>
 
-                <div class=" thumb " v-for="(image, index) in images" :class="currentIndex === index ? 'active' : null">
-                    <img :src="image.src">
+                <div class=" thumb " v-for="(image, index) in images " :class="currentIndex===index ? 'active' : null ">
+                    <img :src="image.src ">
                 </div>
-                <div class="next" @click="nextImage()"></div>
+                <div class="next " @click="nextImage() "></div>
             </div>
         </div>
     </div>
