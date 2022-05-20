@@ -13,7 +13,7 @@
 <body>
     <div id="root">
 
-        <div class="container" @mouseover=>
+        <div class="container ">
             <div class="items ">
 
                 <div class="item active ">
@@ -26,9 +26,9 @@
 
             </div>
             <div class="thumbs ">
-                <div class="prev " @click="prevImage() "></div>
+                <div class="prev" @click="prevImage() "></div>
 
-                <div class=" thumb " v-for="(image, index) in images " :class="currentIndex===index ? 'active' : null ">
+                <div class="thumb" @click="changeImage(index)" v-for="(image, index) in images " :class="currentIndex===index ? 'active' : null ">
                     <img :src="image.src ">
                 </div>
                 <div class="next " @click="nextImage() "></div>
