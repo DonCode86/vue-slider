@@ -54,6 +54,11 @@ const app = new Vue({
         changeImage(index) {
             this.currentIndex = index;
         },
+
+        stopPlay() {
+            clearInterval(this.timer);
+        },
+
         play: function() {
             let app = this;
             this.timer = setInterval(function() {
